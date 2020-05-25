@@ -15,26 +15,27 @@ var meteorites []Meteorite
 
 func init() {
 	currentDir, err := os.Getwd()
-	if err != nil {
-		log.Fatal(err)
-	}
+	handleError(err)
+
 	path := filepath.Join(currentDir, "data", meteoriteJsonFile)
 	log.Println(path)
 
 	bytes, err := ioutil.ReadFile(path)
-	if err != nil {
-		log.Fatal(err)
-	}
+	handleError(err)
 
-	if err = json.Unmarshal(bytes, &meteorites); err != nil {
-		log.Fatal(err)
-	}
+	handleError(json.Unmarshal(bytes, &meteorites))
 	log.Printf("JSON HTTP server initialization complete")
 }
 
 func main() {
 	http.HandleFunc("/meteorites", getMeteors)
 	log.Fatal(http.ListenAndServe(":8090", nil))
+}
+
+func handleError(err error) {
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 type Meteorite struct {
@@ -59,8 +60,6 @@ func getMeteors(writer http.ResponseWriter, request *http.Request) {
 	writer.Header().Set("Content-Type", "application/json; charset=utf-8")
 	writer.WriteHeader(http.StatusOK)
 	responseByte, err := json.Marshal(&meteorites)
-	if err != nil {
-		log.Fatal(err)
-	}
+	handleError(err)
 	_, _ = writer.Write(responseByte)
 }
