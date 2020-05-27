@@ -3,22 +3,25 @@ syntax = "proto3";
 import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
 
+package meteorite;
+option go_package = "yudhistiraaryarukmana.org/demo/meteorite/grpc/api";
+
 message GeoLocation {
     string type = 1;
     repeated double coordinates = 2;
 }
 
 message MeteoriteLanding {
-    uint32 id = 1;
+    string id = 1;
     string name = 2;
     string fall = 3;
     GeoLocation geolocation = 4;
-    double mass = 5;
+    string mass = 5;
     string nametype = 6;
     string recclass = 7;
     string reclat = 8;
-    double reclong = 9;
-    google.protobuf.Timestamp year = 10;
+    string reclong = 9;
+    string year = 10;
 }
 
 message MeteoriteLandingList {
@@ -26,5 +29,5 @@ message MeteoriteLandingList {
 }
 
 service MeteoriteLandingsService {
-    rpc GetPayload(google.protobuf.Empty) returns (MeteoriteLandingList) {}
+    rpc GetMeteorite(google.protobuf.Empty) returns (MeteoriteLandingList) {}
 }
