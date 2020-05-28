@@ -40,7 +40,7 @@ func Benchmark10HttpRequest(b *testing.B) {
 }
 
 func Benchmark100HttpRequest(b *testing.B) {
-	concurrentRequest := 10
+	concurrentRequest := 100
 
 	var response []Meteorite
 	for n := 0; n < b.N; n++ {
