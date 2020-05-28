@@ -6,7 +6,7 @@ import (
 	"google.golang.org/grpc"
 	"log"
 	"time"
-	meteorite "yudhistiraaryarukmana.org/demo/meteorite/grpc/client/yudhistiraaryarukmana.org/demo/meteorite/grpc/api"
+	meteorite "yudhistira.dev/demo/meteorite/grpc/client/yudhistira.dev/demo/meteorite/grpc/api"
 )
 
 func main() {

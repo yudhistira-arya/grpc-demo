@@ -1,4 +1,4 @@
-module yudhistiraaryarukmana.org/demo/meteorite/grpc/client
+module yudhistira.dev/demo/meteorite/grpc/client
 
 go 1.14
 

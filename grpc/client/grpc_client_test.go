@@ -6,7 +6,7 @@ import (
 	"sync"
 	"testing"
 	"time"
-	meteorite "yudhistiraaryarukmana.org/demo/meteorite/grpc/client/yudhistiraaryarukmana.org/demo/meteorite/grpc/api"
+	meteorite "yudhistira.dev/demo/meteorite/grpc/client/yudhistira.dev/demo/meteorite/grpc/api"
 )
 
 var result *meteorite.MeteoriteLandingList
@@ -82,18 +82,4 @@ func Benchmark100GrpcRequest(b *testing.B) {
 	}
 	result = response
 }
-
-
-// 1
-// grpc:    1069319 ns /op
-// restful: 4814045 ns /op
-
-// 10
-// grpc:	 3676586 ns/op
-// restful: 13565108 ns/op
-
-// 100
-// grpc:     28657121 ns/op
-// restful: 112159437 ns/op
-
 

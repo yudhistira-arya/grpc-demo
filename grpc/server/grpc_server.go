@@ -11,7 +11,7 @@ import (
 	"net"
 	"os"
 	"path/filepath"
-	meteorite "yudhistiraaryarukmana.org/demo/meteorite/grpc/server/yudhistiraaryarukmana.org/demo/meteorite/grpc/api"
+	meteorite "yudhistira.dev/demo/meteorite/grpc/server/yudhistira.dev/demo/meteorite/grpc/api"
 )
 
 const meteoriteJsonFile = "y77d-th95.json"

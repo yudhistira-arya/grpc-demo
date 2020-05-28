@@ -75,6 +75,3 @@ node_modules
 
 banana.png
 nasilemak.html
-
-# protocol buffer generated
-*.pb.go
